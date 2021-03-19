@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
-
+import{FormsModule}from "@angular/forms"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { UserComponent } from './components/user/user.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { ColorComponent } from './components/color/color.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { CarFilterPipePipe } from './pipes/car-filter-pipe.pipe';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
     UserComponent,
     BrandComponent,
     ColorComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    CarFilterPipePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
