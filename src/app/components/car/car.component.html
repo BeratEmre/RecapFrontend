@@ -1,32 +1,32 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-    <span class="visually-hidden">Loading...</span>
-</div>
 
-<div class="mb-3">
-  <label for="filterText" class="form-label">Araba ara</label>
-  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+<div class="row">
+  <br />
+  <div class="col-md-3">
+    <app-brand></app-brand>
+    <app-color></app-color>
+  </div>
+  <br />
+  <div class="col-md-9">
+    <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+  </div>
   
+  <div class="mb-3">
+    <label for="filterText" class="form-label">Araba ara</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
+  </div>
+  <div >
+    {{filterText}} aradınız
+  </div><br>
+  
+  <div class="card" *ngFor="let car of cars | carFilterPipe:filterText">
+    <img src="../../../assets/CarsFotos/mercedes.jpg" class="card-img-top" alt="../../../assets/CarsFotos/mercedes.jpg">
+    <div class="card-body"  >
+      <h5 class="card-title">{{ car.brandName  }}</h5>
+      <p class="card-text">Arabamızın rengi {{ car.colorName }}, model yılı {{ car.modelYear }}, günlü fiyatı {{ car.dailyPrice }}, modeliyse {{ car.description }}.</p>
+      <a routerLink="/cars/cardetail/{{car.carId}}" class="btn btn-primary">Arabanın Detayları</a>
+    </div>
+  </div>
+  
+  </div>
 </div>
-<div >
-  {{filterText}} aradınız
-
-</div>
-<table *ngIf="dataLoaded==true" class="table">
-  <thead>
-    <h3>ARABALAR</h3>
-    <tr>
-      <th>Marka Id</th>
-      <th>Renk Id</th>
-      <th>Model Yılı</th>
-      <th>Günlük Fiyatı</th>
-      <th>Açıklama</th>
-    </tr>
-  </thead>
-<tr *ngFor="let car of cars | carFilterPipe:filterText" routerLink="/cars/cardetail/{{car.carId}}">
-    <td>{{ car.brandName  }}</td>
-    <td>{{ car.colorName }}</td>
-    <td>{{ car.modelYear }}</td>
-    <td>{{ car.dailyPrice }}</td>
-    <td>{{ car.description }}</td>
-  </tr>
-</table> 

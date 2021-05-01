@@ -1,22 +1,36 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
-  <span class="visually-hidden">Loading...</span>
+<div class="ortalatmaDiv">
+  <div
+    *ngIf="dataLoaded == false"
+    class="spinner-border text-primary"
+    role="status"
+  >
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <br>
+  <div align="center"><h3>KİRALANAN ARAÇLAR</h3></div>
+  <br>
+  <table
+    *ngIf="dataLoaded == true"
+    class="table table-bordered table-dark  border-primary table-sm"
+  >
+      <thead class="table-success">
+     
+      <tr>
+        <th>Id</th>
+        <th>Car Id</th>
+        <th>Customer Id</th>
+        <th>Kiralama Tarihi</th>
+        <th>Geriverme Tarihi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rental of rentals">
+        <td>{{ rental.id }}</td>
+        <td>{{ rental.carId }}</td>
+        <td>{{ rental.customerId }}</td>
+        <td>{{ rental.rentDate }}</td>
+        <td>{{ rental.returnDate }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<table *ngIf="dataLoaded==true" class="table">
-  <thead>
-    <h3>KİRALANAN ARAÇLAR</h3>
-    <tr>
-      <th>Id</th>
-      <th>Car Id</th>
-      <th>Customer Id</th>
-      <th>Kiralama Tarihi</th>
-      <th>Geriverme Tarihi</th>
-    </tr>
-  </thead>
-<tr *ngFor="let rental of rentals">
-    <td>{{ rental.id }}</td>
-    <td>{{ rental.carId }}</td>
-    <td>{{ rental.customerId }}</td>
-    <td>{{ rental.rentDate }}</td>
-    <td>{{ rental.returnDate }}</td>
-  </tr>
-</table>

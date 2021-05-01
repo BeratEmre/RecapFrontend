@@ -5,24 +5,26 @@
             <div class="card-body">
                 <form [formGroup]="carAddForm">
                     <div class="mb-3">
-                        <label for="description">Araba adı</label>
+                        <label for="brandName">Arabanın Markası</label>
+                        <div class="form-group">
+                            <input type="string" 
+                            id="brandName" 
+                            formControlName="brandName" class="form-control" 
+                            placeholder="Araba Markası"/>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description">Arabanın Modeli</label>
                         <div class="form-group">
                             <input type="text" 
                             id="description" 
                             formControlName="description" class="form-control" 
-                            placeholder="Araba adı"/>
+                            placeholder="Arabanın Modeli"/>
                         </div>
                     </div>
                    
-                    <div class="mb-3">
-                        <label for="brandId">Model Kodu</label>
-                        <div class="form-group">
-                            <input type="number" 
-                            id="brandId" 
-                            formControlName="brandId" class="form-control" 
-                            placeholder="Model Kodu"/>
-                        </div>
-                    </div>
+                    
                    <div class="mb-3">
                     <label for="dailyPrice">Günlük Fiyatı</label>
                     <div class="form-group">

@@ -37,7 +37,7 @@ import { CarAddComponent } from './components/car-add/car-add.component';
     CarFilterPipePipe,
     ColorFilterPipePipe,
     LoginComponent,
-    CarAddComponent
+    CarAddComponent,
   ],
   imports: [
     BrowserModule,

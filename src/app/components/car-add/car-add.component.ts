@@ -23,7 +23,7 @@ export class CarAddComponent implements OnInit {
       description:["",Validators.required],
       dailyPrice: ["",Validators.required],
       modelYear:["", Validators.required],
-      brandId:["",Validators.required]
+      brandName:["",Validators.required]
      })
   }
 
