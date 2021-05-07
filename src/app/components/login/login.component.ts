@@ -11,6 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  email:string
+
   loginForm:FormGroup;
   constructor(private formBuilder:FormBuilder,
      private authService:AuthService, private toastrService:ToastrService,private router: Router) { }
@@ -35,6 +37,8 @@ export class LoginComponent implements OnInit {
         console.log(response)
         localStorage.setItem("token",response.token)
         this.toastrService.info("Token oluştururu")
+        localStorage.setItem("kullaniciAdi",this.email)
+        console.log(this.email)
         this.router.navigate(['cars'])
 
       },responseError=>{
