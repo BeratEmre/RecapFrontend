@@ -22,6 +22,9 @@ import { LoginComponent } from './components/login/login.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { CarAddComponent } from './components/car-add/car-add.component';
+import { CarUpdateComponent } from './components/car-update/car-update.component';
+import { CrudTableComponent } from './components/crud-table/crud-table.component';
+import { IslemSayfasiComponent } from './components/islem-sayfasi/islem-sayfasi.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { CarAddComponent } from './components/car-add/car-add.component';
     ColorFilterPipePipe,
     LoginComponent,
     CarAddComponent,
+    CarUpdateComponent,
+    CrudTableComponent,
+    IslemSayfasiComponent,
   ],
   imports: [
     BrowserModule,

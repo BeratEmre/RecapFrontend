@@ -11,25 +11,22 @@
   <br>
   <table
     *ngIf="dataLoaded == true"
-    class="table table-bordered table-dark  border-primary table-sm"
+    class="table table-bordered table-light  border-primary table-sm table-hover"
   >
-      <thead class="table-success">
-     
+      <thead class="table-dark">
       <tr>
-        <th>Id</th>
-        <th>Car Id</th>
-        <th>Customer Id</th>
+        <th>Kiralanan Aracın Numabarsı</th>
+        <th>Müşteri Numabarsı</th>
         <th>Kiralama Tarihi</th>
         <th>Geriverme Tarihi</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody >
       <tr *ngFor="let rental of rentals">
-        <td>{{ rental.id }}</td>
         <td>{{ rental.carId }}</td>
         <td>{{ rental.customerId }}</td>
-        <td>{{ rental.rentDate }}</td>
-        <td>{{ rental.returnDate }}</td>
+        <td>{{ rental.rentDate | date: 'dd.MM.yyy  hh.mm'}}</td>
+        <td>{{ rental.returnDate | date: 'dd.MM.yyy  hh.mm' }}</td>
       </tr>
     </tbody>
   </table>

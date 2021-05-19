@@ -1,0 +1,23 @@
+<table style="margin-top: 40px;" *ngIf="dataLoaded==true" class="table table-hover table-bordered table-light border-primary table-sm ">
+    <thead class="text-center table-dark">
+      <tr>
+        <th>Araba Numarası</th>
+        <th>Araba Marakası</th>
+        <th>Araba Modeli</th>
+        <th>Günlük Fiyatı</th> 
+        <th>Araba Rengi</th>
+        <th>İşlem</th>      
+      </tr>
+    </thead>
+  <tbody class="table-hover" id="tbod">
+    <tr class="text-center table-active" *ngFor="let car of cars" >
+      <td>{{ car.carId }}</td>
+      <td>{{ car.description }}</td>
+      <td>{{ car.brandName }}</td>
+      <td>{{ car.dailyPrice }}</td>
+      <td>{{ car.colorName }}</td>
+      <td> <label for="guncelle">Güncelle</label><i style="margin-left: 7px;" id="guncelle" class="fas fa-edit" [routerLink]="['/cars/update',car.carId]" ></i> / <label for="sil">Sil</label><i style="margin-left: 7px;" id="sil" class="far fa-trash-alt"></i></td>
+    </tr>
+  </tbody>
+</table>
+

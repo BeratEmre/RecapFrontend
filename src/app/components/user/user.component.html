@@ -11,11 +11,10 @@
   <br>
   <table
     *ngIf="dataLoaded == true"
-    class="table table-bordered table-dark border-primary table-sm"
+    class="table table-bordered table-light border-primary table-sm table-hover"
   >
-    <thead class="table-success">
+    <thead class="table-dark">
       <tr>
-        <th>Id</th>
         <th>Ad</th>
         <th>Soyad</th>
         <th>Email</th>
@@ -23,7 +22,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <td>{{ user.id }}</td>
         <td>{{ user.firstName }}</td>
         <td>{{ user.lastName }}</td>
         <td>{{ user.email }}</td>

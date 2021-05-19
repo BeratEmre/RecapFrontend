@@ -23,13 +23,15 @@ export class CarAddComponent implements OnInit {
       description:["",Validators.required],
       dailyPrice: ["",Validators.required],
       modelYear:["", Validators.required],
-      brandName:["",Validators.required]
+      brandName:["",Validators.required],
+      rengi:["",Validators.required]
      })
   }
 
   add(){
     if(this.carAddForm.valid){
       let carModel = Object.assign({},this.carAddForm.value)
+      console.log(carModel)
       this.carService.carAdd(carModel).subscribe(response=>{
         this.toastrService.success(response.message,"Başarılı")
       },responseError=>{

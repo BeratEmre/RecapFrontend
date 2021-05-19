@@ -22,24 +22,24 @@ export class BrandComponent implements OnInit {
   ngOnInit(): void {
     this.getBrands();
   }
-  // getBrands(){
-  //   this.brandService.getBrands().subscribe(response=>{
-  //     this.brands=response.data;
-  //     this.dataLoaded=true;
-  //   })
-  // }
   getBrands(){
+     this.brandService.getBrands().subscribe(response=>{
+      this.brands=response.data;
+     this.dataLoaded=true;
+    })
+   }
+ /* getBrands(){
     this.carService.getCars().subscribe(response=>{
       this.cars= response.data
       this.dataLoaded=true;
     })
-  }
-  setCurrentBrand(car:Car){
-    this.currentCar=car
+  } */
+  setCurrentBrand(brand:Brand){
+    this.currentBrand=brand
   }
 
-  getCurrentBrandClass(car:Car){
-    if (car==this.currentCar) {
+  getCurrentBrandClass(brand:Brand){
+    if (brand==this.currentBrand) {
       return "list-group-item active"
     }
     else{

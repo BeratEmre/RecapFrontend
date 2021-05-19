@@ -1,9 +1,10 @@
-<div class="content">
-    <div class="col-md-12">
+<div  class="content">
+    <div class="cardDiv">
         <div class="card">
+            
             <div class="card-header"><h5 class="title">Araba ekle</h5></div>
-            <div class="card-body">
-                <form [formGroup]="carAddForm">
+            <div class="card-body" >
+                <form [formGroup]="carAddForm" class="form">
                     <div class="mb-3">
                         <label for="brandName">Arabanın Markası</label>
                         <div class="form-group">
@@ -13,7 +14,6 @@
                             placeholder="Araba Markası"/>
                         </div>
                     </div>
-
                     <div class="mb-3">
                         <label for="description">Arabanın Modeli</label>
                         <div class="form-group">
@@ -22,10 +22,8 @@
                             formControlName="description" class="form-control" 
                             placeholder="Arabanın Modeli"/>
                         </div>
-                    </div>
-                   
-                    
-                   <div class="mb-3">
+                    </div>                       
+                    <div class="mb-3">
                     <label for="dailyPrice">Günlük Fiyatı</label>
                     <div class="form-group">
                         <input type="number" 
@@ -42,7 +40,16 @@
                             formControlName="modelYear" class="form-control" 
                             placeholder="Model Yılı"/>
                         </div>
-                    </div>                    
+                    </div>       
+                    <div  class="mb-3">
+                        <label for="modelYear">Rengi</label>
+                        <div class="form-group">
+                            <input type="string" 
+                            id="modelYear" 
+                            formControlName="rengi" class="form-control" 
+                            placeholder="Rengi"/>
+                        </div>
+                    </div>                
                 </form>
             </div>
             <div class="card-footer">

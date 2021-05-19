@@ -5,7 +5,6 @@
     <app-brand></app-brand>
     <app-color></app-color>
   </div>
-  <br />
   <div class="col-md-9">
     <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
       <span class="visually-hidden">Loading...</span>
@@ -15,18 +14,17 @@
     <label for="filterText" class="form-label">Araba ara</label>
     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="arama ifadesi giriniz">
   </div>
-  <div >
+  <div *ngIf="filterText">
     {{filterText}} aradınız
-  </div><br>
+  </div>
   
   <div class="card" *ngFor="let car of cars | carFilterPipe:filterText">
-    <img src="../../../assets/CarsFotos/mercedes.jpg" class="card-img-top" alt="../../../assets/CarsFotos/mercedes.jpg">
+    <img src="../../../assets/CarsFotos/{{ car.brandName.toLowerCase()  }}{{car.description.toLowerCase()}}.jpg" class="card-img-top" alt="">
     <div class="card-body"  >
       <h5 class="card-title">{{ car.brandName  }}</h5>
       <p class="card-text">Arabamızın rengi {{ car.colorName }}, model yılı {{ car.modelYear }}, günlü fiyatı {{ car.dailyPrice }}, modeliyse {{ car.description }}.</p>
-      <a routerLink="/cars/cardetail/{{car.carId}}" class="btn btn-primary">Arabanın Detayları</a>
+      <button type="button" routerLink="/cars/cardetail/{{car.carId}}" class="btn btn-success">Arabanın Detayları</button>
     </div>
   </div>
-  
   </div>
 </div>

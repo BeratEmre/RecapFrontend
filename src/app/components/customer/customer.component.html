@@ -6,17 +6,15 @@
   <div align="center"> <h3>MÜŞTERİLER</h3></div>
   <br>
 
-  <table *ngIf="dataLoaded==true" class="table table-bordered table-dark border-primary table-sm">
-    <thead class="table-success">
+  <table *ngIf="dataLoaded==true" class="table table-bordered table-light border-primary table-sm">
+    <thead class="table-dark">
       <tr>
-        <th>Id</th>
-        <th>Kullanıcı Id</th>
+        <th>Kullanıcı Numarası</th>
         <th>Şirket Adı</th>
       </tr>
     </thead>
     <tbody>
   <tr *ngFor="let customer of customers">
-      <td>{{ customer.id }}</td>
       <td>{{ customer.userId }}</td>
       <td>{{ customer.companyName }}</td>
     </tr>

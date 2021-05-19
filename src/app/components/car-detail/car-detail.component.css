@@ -1,0 +1,22 @@
+.card{
+    width: 600px;
+    height: 500px;
+    margin-top: 15px ;
+    float: left;
+}
+.card-img-top{
+    margin-top: 5px;
+    width: 550px;
+    height: 400px;
+}
+.card-title{
+    margin-top: 5px;
+    text-align: center;
+}
+.card-text{
+    text-align: center;
+}
+.table{
+    margin-top: 5px;
+    width: 500px;
+}
