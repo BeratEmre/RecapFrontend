@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-navi',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class NaviComponent implements OnInit {
 
   navitemId=0
-  constructor(private router:Router) {  
+  constructor(private router:Router,private toastr:ToastrService) {  
    }
 
   navlink:number
@@ -27,7 +28,9 @@ export class NaviComponent implements OnInit {
     localStorage.removeItem("token");
     localStorage.removeItem("kullaniciAdi");
     this.navitemId=0  
+    this.toastr.error("Çıkış Yaptınız.")
     this.router.navigate(["login"])
+    
   }
 
   inLogin(){

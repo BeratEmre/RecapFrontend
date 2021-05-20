@@ -22,7 +22,7 @@
     <img src="../../../assets/CarsFotos/{{ car.brandName.toLowerCase()  }}{{car.description.toLowerCase()}}.jpg" class="card-img-top" alt="">
     <div class="card-body"  >
       <h5 class="card-title">{{ car.brandName  }}</h5>
-      <p class="card-text">Arabamızın rengi {{ car.colorName }}, model yılı {{ car.modelYear }}, günlü fiyatı {{ car.dailyPrice }}, modeliyse {{ car.description }}.</p>
+      <p class="card-text">Arabamızın rengi {{ car.colorName }}, model yılı {{ car.modelYear }}, günlü fiyatı {{ car.dailyPrice }}, modeli {{ car.description }}.</p>
       <button type="button" routerLink="/cars/cardetail/{{car.carId}}" class="btn btn-success">Arabanın Detayları</button>
     </div>
   </div>
