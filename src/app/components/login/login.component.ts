@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(loginModel).subscribe(response=>{
         console.log(response)
         localStorage.setItem("token",response.token)
-        this.toastrService.info("Token oluştururu")
+        this.toastrService.success("Giriş yaptınız","Başarılı")
         localStorage.setItem("kullaniciAdi",this.email)
         console.log(this.email)
         this.router.navigate(['cars'])
